@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: stg_postgres__addresses
+    description: "User addresses"
+  - name: stg_postgres__events
+    description: "Events"
+  - name: stg_postgres__order_items
+    description: "Specific items in every order"
+  - name: stg_postgres__orders
+    description: "Top-level order details"
+  - name: stg_postgres__products
+    description: "List of products and their prices"
+  - name: stg_postgres__promos
+    description: "Promotions/offers and whether they are active or not"
+  - name: stg_postgres__users
+    description: "User info"
