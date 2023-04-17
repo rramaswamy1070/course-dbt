@@ -1,10 +1,10 @@
 #### How many users do we have?
 
 ```sql
-    select 
-        count(distinct user_id) as num_users
-    from 
-        stg_postgres__users;
+select 
+    count(distinct user_id) as num_users
+from 
+    stg_postgres__users;
 ```
 
 ###### Result: 130
@@ -50,7 +50,8 @@ from
 ###### Result: 3.891803
 
 #### How many users have only made one purchase? Two purchases? Three+ purchases?
-##### Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
+##### Note: 
+###### You should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
 
 ```sql
 with user_orders as (
