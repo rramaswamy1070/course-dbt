@@ -79,10 +79,11 @@ order by
 
 ###### Result:
 ```
-NUM_PURCHASES	|   NUM_USERS
-1	            |   25
-2	            |   28
-3+	           |   71
+| NUM_PURCHASES | NUM_USERS |
+|---------------|-----------|
+| 1             | 25        |
+| 2             | 28        |
+| 3+            | 71        |
 ```
 #### On average, how many unique sessions do we have per hour?
 
