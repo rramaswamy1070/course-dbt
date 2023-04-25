@@ -1,10 +1,4 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
-SELECT 
+SELECT
     PROMO_ID, 
     DISCOUNT, 
     STATUS AS PROMO_STATUS

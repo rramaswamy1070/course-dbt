@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
 SELECT 
   PRODUCT_ID, 
   NAME AS PRODUCT_NAME, 
