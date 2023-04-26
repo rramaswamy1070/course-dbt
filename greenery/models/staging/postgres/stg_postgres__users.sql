@@ -1,3 +1,5 @@
+with users as (select * from {{ source('postgres', 'users') }})
+
 SELECT
     user_id,
     first_name,
@@ -8,4 +10,4 @@ SELECT
     updated_at,
     address_id
 FROM 
-  {{ source('postgres', 'users') }}
+  users

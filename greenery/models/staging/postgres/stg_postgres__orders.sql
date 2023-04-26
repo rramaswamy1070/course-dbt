@@ -1,3 +1,5 @@
+WITH orders as (select * from {{ source('postgres', 'orders') }})
+
 SELECT
     ORDER_ID,
     USER_ID,
@@ -13,4 +15,4 @@ SELECT
     DELIVERED_AT,
     STATUS AS ORDER_STATUS
 FROM
-    {{ source('postgres', 'orders') }}
+    orders

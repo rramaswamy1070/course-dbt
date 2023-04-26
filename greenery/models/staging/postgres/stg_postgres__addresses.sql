@@ -1,3 +1,5 @@
+WITH addresses as (select * from {{ source('postgres', 'addresses') }})
+
 SELECT
     ADDRESS_ID,
     ADDRESS,
@@ -5,4 +7,4 @@ SELECT
     STATE,
     COUNTRY
 FROM
-    {{ source('postgres', 'addresses') }}
+    addresses

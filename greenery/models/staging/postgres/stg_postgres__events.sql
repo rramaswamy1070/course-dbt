@@ -1,3 +1,5 @@
+WITH events as (select * from {{ source('postgres', 'events') }})
+
 SELECT
     EVENT_ID, 
     SESSION_ID, 
@@ -8,4 +10,4 @@ SELECT
     ORDER_ID, 
     PRODUCT_ID
 FROM
-    {{ source('postgres', 'events') }}
+    events
