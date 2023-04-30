@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: User-level order and session stats
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null

@@ -1,3 +1,5 @@
+### Week 1
+
 #### How many users do we have?
 
 ```sql
@@ -105,3 +107,52 @@ from
 ```
 
 ###### Result: 16.327586
+
+### Week 2
+
+#### What is our user repeat rate? Repeat Rate = Users who purchased 2 or more times / users who purchased
+
+```sql
+with user_purchases as (
+    select
+        user_id,
+        count(distinct order_id) as num_purchases
+    from
+        stg_postgres__orders
+    group by
+        user_id
+)
+
+select
+    count(distinct user_id) as users_who_purchased,
+    count(distinct case when num_purchases >= 2 then user_id else null end) as num_users_who_purchased_twice_or_more,
+    num_users_who_purchased_twice_or_more / users_who_purchased as repeat_rate
+from
+    user_purchases;
+```
+
+###### Result: 0.798387
+
+#### What are good indicators of a user who will likely purchase again? 
+```
+1. Time from signup to first order
+2. How a user's order frequency compares to median/average order frequency
+3. High spend per order / large order volume (number of items)
+4. Session duration
+```
+
+#### What about indicators of users who are likely NOT to purchase again? 
+```
+1. Users who signed up but didn't place any orders, or signed up, placed 1 order and never ordered again (baseline would be median/average order frequency)
+2. Users whose orders got delivered late (baseline would be median/average order delivery time)
+3. Low spend per order / small order volume (number of items)
+4. Session duration
+```
+
+#### If you had more data, what features would you want to look into to answer this question?
+
+```
+1. Ratings/reviews
+2. User demographics (age, gender, etc.)
+3. Discount code/coupon usage
+```

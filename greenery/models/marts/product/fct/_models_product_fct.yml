@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: fct_page_views
+    description: Page view stats based on clickstream events data
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        tests:
+          - not null

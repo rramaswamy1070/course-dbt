@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: superheroes
-    description: Demographics about each superhero such as name, hair color, height and weight. 
+    description: Demographics about each superhero such as name, hair color, height and weight
     columns:
       - name: name
         tests:

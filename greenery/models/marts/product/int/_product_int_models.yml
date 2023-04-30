@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: int_user_sessions
+    description: User-level session stats
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: session_duration
+        tests:
+          - positive_values

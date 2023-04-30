@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: User, order and product-level data (most granular)
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_user_orders
+    description: User-level order stats
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null

@@ -6,7 +6,7 @@ SELECT
     last_name,
     email,
     phone_number,
-    created_at,
+    created_at as signup_date,
     updated_at,
     address_id
 FROM 
