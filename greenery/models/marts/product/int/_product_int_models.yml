@@ -8,6 +8,15 @@ models:
         tests:
           - unique
           - not_null
-      - name: session_duration
+      - name: shortest_session_duration
+        tests:
+          - positive_values
+      - name: longest_session_duration
+        tests:
+          - positive_values
+      - name: avg_session_duration
+        tests:
+          - positive_values
+      - name: median_session_duration
         tests:
           - positive_values
