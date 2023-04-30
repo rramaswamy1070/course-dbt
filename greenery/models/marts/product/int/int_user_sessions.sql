@@ -16,8 +16,8 @@ user_session_stats as (
     select
         u.user_id,
         s.session_id,
-        min(s.created_at) as first_event_time,
-        max(s.created_at) as last_event_time,
+        min(s.event_timestamp) as first_event_time,
+        max(s.event_timestamp) as last_event_time,
         datediff(minutes, first_event_time, last_event_time) as session_duration
     from
         users u
