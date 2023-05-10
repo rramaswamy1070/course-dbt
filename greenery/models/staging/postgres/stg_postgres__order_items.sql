@@ -1,8 +1,8 @@
 WITH order_items as (select * from {{ source('postgres', 'order_items') }})
 
 SELECT
-    ORDER_ID, 
-    PRODUCT_ID, 
-    QUANTITY
+    order_id, 
+    product_id, 
+    quantity
 FROM
     order_items

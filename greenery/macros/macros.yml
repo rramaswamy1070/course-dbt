@@ -1,0 +1,29 @@
+version: 2
+
+macros:
+  - name: calendar_date
+    description: "Given a start date and an end date, generate a sequence of dates between them"
+    docs:
+      show: true
+    arguments:
+      - name: start_date
+        type: string
+        description: "The start date for the range of dates required"
+      - name: end_date
+        type: string
+        description: "The end date for the range of dates required"
+  - name: aggregate_event
+    description: "Given an event name, count how many times it occurred"
+    docs:
+      show: true
+  - name: grant_role
+    description: "Macro to grant a role to a particular schema"
+    docs:
+      show: true
+    arguments:
+      - name: role
+        type: string
+        description: "The role to be granted"
+      - name: schema
+        type: string
+        description: "The schema to which the role should be granted"
